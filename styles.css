@@ -1,0 +1,368 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+body {
+    background-color: #f1f3f6;
+    min-height: 100vh;
+}
+
+
+/* Navbar */
+
+.navbar {
+    background-color: #2874f0;
+    padding: 0.5rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+
+.nav-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.logo {
+    height: 80px;
+    object-fit: contain;
+}
+
+.explore-plus {
+    color: white;
+    font-size: 11px;
+    font-style: italic;
+    display: flex;
+    align-items: center;
+}
+
+.plus-icon {
+    height: 12px;
+    margin-left: 4px;
+}
+
+.search-container {
+    flex: 1;
+    max-width: 36rem;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 2px;
+}
+
+.search-input {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    font-size: 14px;
+    border: none;
+    outline: none;
+}
+
+.search-button {
+    padding: 0.5rem 1.5rem;
+    color: #2874f0;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.login-button {
+    background-color: white;
+    color: #2874f0;
+    padding: 0.25rem 2.5rem;
+    font-weight: 500;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.login-button:hover {
+    color: #000000;
+    background-color: #fcf700;
+    border-radius: 10px;
+    animation-duration: 5s;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-link {
+    color: white;
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+
+/* Category Bar */
+
+.category-bar {
+    background-color: white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.category-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0.5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.category-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+}
+
+.category-item:hover {
+    color: #2874f0;
+}
+
+.category-item img {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+}
+
+.category-item span {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+
+/* Slider */
+
+.slider-container {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slider img {
+    width: 100%;
+    height: 250px;
+    /* Adjust height as per design */
+}
+
+.prev,
+.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+
+/* Main Content */
+
+.main-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.banner {
+    margin-top: 1rem;
+}
+
+.banner img {
+    width: 100%;
+    height: 190%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+
+/* Deals Section */
+
+.deals-section {
+    margin-top: 1rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+}
+
+.deals-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.deals-header h2 {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.view-all-button {
+    background-color: #2874f0;
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.view-all-button:hover {
+    background-color: #d89a16;
+    color: #000000;
+    animation-duration: 3ms;
+    border-radius: 10px;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem;
+}
+
+@media (min-width: 768px) {
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .products-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.product-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    cursor: pointer;
+    transition: box-shadow 0.2s;
+}
+
+.product-card:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-card img {
+    width: 192px;
+    height: 192px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+}
+
+.product-card h3 {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.product-price {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.price {
+    font-weight: 500;
+}
+
+.original-price {
+    color: #666;
+    text-decoration: line-through;
+    font-size: 14px;
+}
+
+.discount {
+    color: #388e3c;
+    font-size: 14px;
+}
+
+
+/* Footer */
+
+.footer {
+    background-color: #172337;
+    color: white;
+    margin-top: 2rem;
+}
+
+.footer-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2.5rem 1rem;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
+}
+
+@media (min-width: 768px) {
+    .footer-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.footer-column h4 {
+    color: #878787;
+    margin-bottom: 0.75rem;
+}
+
+.footer-column ul {
+    list-style: none;
+}
+
+.footer-column ul li {
+    font-size: 14px;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+}
+
+.footer-bottom {
+    border-top: 1px solid #454d5e;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    font-size: 14px;
+    color: #878787;
+}

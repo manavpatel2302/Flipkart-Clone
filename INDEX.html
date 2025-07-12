@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flipkart</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo-container">
+                <a href="INDEX.html">
+                    <img src="/Flipkart/Flipkart-Logo-White-Text.png" alt="Flipkart" class="logo" />
+                </a>
+            </div>
+
+            <div class="search-container">
+                <input type="text" placeholder="Search for products, brands and more" class="search-input" />
+                <button class="search-button">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        </button>
+            </div>
+
+            <button class="login-button"><a href="/Flipkart/login page.html">Login</button></a>
+
+            <div class="nav-links">
+                <button class="nav-link">Become a Seller</button>
+                <button class="nav-link">
+          More
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+                <button class="nav-link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
+          Cart
+        </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="category-bar">
+        <div class="category-content">
+            <div class="category-item">
+                <img src="/Flipkart/Liquid_detergents-2048x1707.jpg" alt="Grocery" />
+                <span>Grocery</span>
+            </div>
+            <div class="category-item">
+                <img src="/Flipkart/mobiles.jpg" alt="Mobiles" />
+                <span>Mobiles</span>
+            </div>
+            <div class="category-item">
+                <img src="/Flipkart/fashion.jpg" alt="Fashion" />
+                <span>Fashion</span>
+            </div>
+            <div class="category-item">
+                <a href="/Flipkart/product.html">
+                    <img src="electronic.jpg" alt="Electronics" /></a>
+                <span>Electronics</span>
+
+            </div>
+            <div class="category-item">
+                <img src="/Flipkart/home.jpg" alt="Home" />
+                <span>Home</span>
+            </div>
+            <div class="category-item">
+                <img src="/Flipkart/appliance.jpg" alt="Appliances" />
+                <span>Appliances</span>
+            </div>
+            <div class="category-item">
+                <img src="/Flipkart/travel.jpg" alt="Travel" />
+                <span>Travel</span>
+            </div>
+            <div class="category-item">
+                <img src="/Flipkart/top offer.jpg" alt="Top Offers" />
+                <span>Top Offers</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="slider-container">
+        <div class="slider">
+            <img src="/Flipkart/slider1.jpg" alt="Slide 1">
+            <img src="/Flipkart/slider2.jpg" alt="Slide 2">
+            <img src="/Flipkart/slider3.jpg" alt="Slide 3">
+        </div>
+        <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+        <button class="next" onclick="changeSlide(1)">&#10095;</button>
+    </div>
+
+
+
+    <div class="deals-section">
+        <div class="deals-header">
+            <h1 style="color: crimson;">Deals of the Day</h1>
+            <a href="product.html">
+                <button class="view-all-button">VIEW ALL</button>
+            </a>
+        </div>
+
+        <div class="products-grid" id="productsGrid">
+            <!-- Products will be added here by JavaScript -->
+        </div>
+    </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4>ABOUT</h4>
+                    <ul>
+                        <li>Contact Us</li>
+                        <li>About Us</li>
+                        <li>Careers</li>
+                        <li>Flipkart Stories</li>
+                        <li>Press</li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>HELP</h4>
+                    <ul>
+                        <li>Payments</li>
+                        <li>Shipping</li>
+                        <li>Cancellation & Returns</li>
+                        <li>FAQ</li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>CONSUMER POLICY</h4>
+                    <ul>
+                        <li>Return Policy</li>
+                        <li>Terms Of Use</li>
+                        <li>Security</li>
+                        <li>Privacy</li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>SOCIAL</h4>
+                    <ul>
+                        <li>Facebook</li>
+                        <li>Twitter</li>
+                        <li>YouTube</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom" style="display: flex; justify-content: space-between; align-items: center;">
+                <p>&copy; 2024 Flipkart. All rights reserved.</p>
+                <p>&copy; Developed By Manav Patel</p>
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+
+</html>

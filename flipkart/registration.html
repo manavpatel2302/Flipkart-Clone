@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page</title>
+    <style>
+        body {
+            background-image: url('img/ecommerce-web-store-hand-drawn-illustration_107791-10966.avif');
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            color:white
+        }
+        .container {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+        input {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 3px solid #000000;
+            border-radius: 5px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .error {
+            color: red;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 align="center">Register</h1>
+        <form id="registrationForm">
+            <label for="email">Username:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name">
+
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email" placeholder="Enter your email">
+            <div class="error" id="emailError"></div>
+
+            <label for="phone">Phone Number:</label>
+            <input type="text" id="phone" name="phone" placeholder="Enter your phone number">
+            <div class="error" id="phoneError"></div>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password">
+            <div class="error" id="passwordError"></div>
+
+            <label for="confirmPassword">Confirm Password:</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password">
+            <div class="error" id="confirmPasswordError"></div>
+
+            <button type="submit">Register</button>
+        </form>
+    </div>
+
+    <script>
+        const form = document.getElementById('registrationForm');
+        const emailInput = document.getElementById('email');
+        const phoneInput = document.getElementById('phone');
+        const passwordInput = document.getElementById('password');
+        const confirmPasswordInput = document.getElementById('confirmPassword');
+
+        const emailError = document.getElementById('emailError');
+        const phoneError = document.getElementById('phoneError');
+        const passwordError = document.getElementById('passwordError');
+        const confirmPasswordError = document.getElementById('confirmPasswordError');
+
+        form.addEventListener('submit', function (event) {
+            event.preventDefault();
+            let isValid = true;
+
+            // Email validation
+            const emailValue = emailInput.value;
+            const emailRegex = /^[a-zA-Z][a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
+            if (!emailRegex.test(emailValue)) {
+                emailError.textContent = 'Email must start with a letter and be valid.';
+                isValid = false;
+            } else {
+                emailError.textContent = '';
+            }
+
+            // Phone number validation (10 digits)
+            const phoneValue = phoneInput.value;
+            const phoneRegex = /^\d{10}$/;
+            if (!phoneRegex.test(phoneValue)) {
+                phoneError.textContent = 'Phone number must be 10 digits.';
+                isValid = false;
+            } else {
+                phoneError.textContent = '';
+            }
+
+            // Password validation (8-12 characters, upper, lower, digit, special char)
+            const passwordValue = passwordInput.value;
+            const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,12}$/;
+            if (!passwordRegex.test(passwordValue)) {
+                passwordError.textContent = 'Password must be 8-12 characters long, with upper and lower case, a digit, and a special character.';
+                isValid = false;
+            } else {
+                passwordError.textContent = '';
+            }
+
+            // Confirm password validation
+            const confirmPasswordValue = confirmPasswordInput.value;
+            if (passwordValue !== confirmPasswordValue) {
+                confirmPasswordError.textContent = 'Passwords do not match.';
+                isValid = false;
+            } else {
+                confirmPasswordError.textContent = '';
+            }
+
+            // If all validations pass, submit the form (for now, we'll log to the console)
+            if (isValid) {
+                console.log('Form submitted successfully!');
+                alert('Registration successful!');
+            }
+        });
+    </script>
+</body>
+</html>
